@@ -10,8 +10,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 
-import com.mysql.jdbc.ResultSetMetaData;
-
+import java.sql.*;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -26,7 +25,7 @@ public class DBConnector {
 	private String username, password;
 	private JButton btnConnect, btnDisconnect, btnExecute, btnExit, btnReset, btnClear;
 	private JTextArea textArea;
-	private MysqlHandler conn;
+	private OracleHandler conn;
 	private JTextArea textAreaQueryResult;
 	
 	/**
@@ -151,7 +150,7 @@ public class DBConnector {
 	
 	private boolean authenticate() {
 	
-		conn = new MysqlHandler(username,password);
+		conn = new OracleHandler(username,password);
 		JOptionPane.showMessageDialog(null,conn.getAuthenticationResults(),"Authentication Result",JOptionPane.PLAIN_MESSAGE);
 		return conn.isAuthenticated();
 	}
