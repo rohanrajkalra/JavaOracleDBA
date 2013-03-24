@@ -22,7 +22,7 @@ public class OracleHandler {
             // The newInstance() call is a work around for some
             // broken Java implementations
 
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/supplier",username,password);
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/bikerace",username,password);
             
             isAuthenticated = true;
         } catch (SQLException ex) {
